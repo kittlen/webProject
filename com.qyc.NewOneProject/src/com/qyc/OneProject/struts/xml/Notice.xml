@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Notice" extends="struts-default" namespace="/Notice">
+		<!-- 图片上传 -->
+		<action name="execute" class="com.qyc.OneProject.action.NoticePhoto"
+			method="imgUpload">
+		</action>
+
+		<action name="insert" class="com.qyc.OneProject.action.NoticeAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/Admin/AdminRelease.jsp
+			</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.NoticeAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/Admin/AdminReleaseInfo.jsp
+			</result>
+		</action>
+		<action name="NoticeInfo" class="com.qyc.OneProject.action.NoticeAction"
+			method="NoticeInfo">
+		</action>
+		<action name="Noselect" class="com.qyc.OneProject.action.NoticeAction"		
+			method="Noselect">
+			<result name="Asuccess">/WEB-INF/content/Admin/Admin/AdminReleaseShow.jsp</result>
+			<result name="Ssuccess">/WEB-INF/content/Student/StudentReleaseShow.jsp</result>
+			<result name="Tsuccess">/WEB-INF/content/Teacher/TeacherReleaseShow.jsp</result>
+		</action>
+		
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

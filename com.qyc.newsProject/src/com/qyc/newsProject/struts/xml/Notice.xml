@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="notice" extends="index" namespace="/not">
+		<!-- 发布新闻 -->
+		<action name="save" class="com.qyc.newsProject.action.NoticeAction"
+			method="save">
+			<result name="success">/WEB-INF/context/notice/notice.jsp</result>
+		</action>
+		<!-- 删除新闻 -->
+		<action name="delete" class="com.qyc.newsProject.action.NoticeAction"
+			method="delete">
+			<result name="success">/WEB-INF/context/notice/lists.jsp</result>
+		</action>
+		<!-- 富文本编译器图片上传 -->
+		<action name="imgUpload" class="com.qyc.newsProject.action.NoticePhoto"
+			method="imgUpload">
+		</action>
+		<!-- 跳转至对应新闻类的页面 -->
+		<action name="skipType" class="com.qyc.newsProject.action.NoticeAction"
+			method="skipType">
+			<result name="success">/WEB-INF/context/notice/type.jsp</result>
+		</action>
+		<!-- 对应新闻类型的列表 -->
+		<action name="showType" class="com.qyc.newsProject.action.NoticeAction"
+			method="showType">
+			<result name="success">/WEB-INF/context/notice/type.jsp</result>
+		</action>
+		<!-- 发表评论 -->
+		<action name="addComment" class="com.qyc.newsProject.action.CommentsAction"
+			method="addComment">
+			<interceptor-ref name="landStack"></interceptor-ref>
+		</action>
+		<!-- 精彩评论 -->
+		<action name="CommentInfo" class="com.qyc.newsProject.action.CommentsAction"
+			method="CommentInfo">
+		</action>
+		<!-- 具体新闻页 -->
+		<action name="noticecont" class="com.qyc.newsProject.action.NoticeAction"
+			method="noticecont">
+			<result name="success">/WEB-INF/context/notice/cont.jsp</result>
+		</action>
+		<!-- 所有评论 -->
+		<action name="allComment" class="com.qyc.newsProject.action.CommentsAction"
+			method="allComment">
+		</action>
+
+
+
+		<!-- 新闻列表 -->
+		<action name="noticeInfo" class="com.qyc.newsProject.action.NoticeAction"
+			method="noticeInfo"></action>
+		<!-- 个人新闻列表 -->
+		<action name="noticeListInfo" class="com.qyc.newsProject.action.NoticeAction"
+			method="noticeListInfo"></action>
+		<!-- 个人新闻列表跳转 -->
+		<action name="noticelist">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/notice/lists.jsp</result>
+		</action>
+		<!-- 所有评论 -->
+		<action name="allCom">
+			<result>/WEB-INF/context/notice/allComments.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

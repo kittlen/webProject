@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Exit" extends="struts-default" namespace="/Exit">
+		<action name="AdminExit" class="com.qyc.OneProject.action.ExitAction"
+			method="AdminExit">
+			<result name="success">/WEB-INF/content/Admin/login.jsp
+			</result>
+		</action>
+		<action name="StudentExit" class="com.qyc.OneProject.action.ExitAction"
+			method="StudentExit">
+			<result name="success">/WEB-INF/content/Student/login.jsp
+			</result>
+		</action>
+		<action name="TeacherExit" class="com.qyc.OneProject.action.ExitAction"
+			method="TeacherExit">
+			<result name="success">/WEB-INF/content/Teacher/login.jsp
+			</result>
+		</action>
+
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.OneProject.Model">
+	<class name="Class" table="T_Class">
+		<id name="Class_ID" column="Class_ID" type="string">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="GradeName" column="GradeName" type="string"
+			length="50"></property>
+			<property name="YearName" column="YearName" type="string"
+			length="50"></property>
+		<property name="Remark" column="Remark" type="text"></property>
+		<many-to-one name="profession" class="Profession" lazy="false">
+			<column name="ProfessionID"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

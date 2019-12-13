@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="user" extends="index" namespace="/user">
+		<!-- 注册 -->
+		<action name="enroll" class="com.qyc.newsProject.action.UserAction"
+			method="enroll">
+			<result name="success">/WEB-INF/context/user/logon.jsp</result>
+		</action>
+
+		<!-- 个人信息 -->
+		<action name="photo" class="com.qyc.newsProject.action.PhotoAction"
+			method="execute">
+			<result name="success">/WEB-INF/context/user/modify.jsp</result>
+		</action>
+		<action name="update" class="com.qyc.newsProject.action.UserAction"
+			method="update">
+			<result name="success">/WEB-INF/context/user/modify.jsp</result>
+		</action>
+		<!-- 密码修改 -->
+		<action name="updatePwd" class="com.qyc.newsProject.action.UserAction"
+			method="updatePwd">
+			<result name="success">/WEB-INF/context/user/modifyPwd.jsp</result>
+		</action>
+		<!-- 登陆 -->
+		<action name="landing" class="com.qyc.newsProject.action.UserAction"
+			method="landing">
+			<result name="success">/WEB-INF/context/index.jsp</result>
+		</action>
+		<!-- 退出 -->
+		<action name="exit" class="com.qyc.newsProject.action.UserAction"
+			method="exit">
+			<result name="success">/WEB-INF/context/index.jsp</result>
+		</action>
+		<!-- 新闻发布 -->
+		<action name="notice">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/notice/notice.jsp</result>
+		</action>
+		<!-- 查询 -->
+		<action name="searchInfo" class="com.qyc.newsProject.action.NoticeAction" method="searchInfo">
+		</action>
+
+
+		<!-- 注册 -->
+		<action name="logon">
+			<result>/WEB-INF/context/user/logon.jsp</result>
+		</action>
+		<!-- 个人信息 -->
+		<action name="personal">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/user/personal.jsp</result>
+		</action>
+		<!-- 个人信息修改 -->
+		<action name="modify">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/user/modify.jsp</result>
+		</action>
+		<!-- 个人密码修改  -->
+		<action name="modifyPwd">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/user/modifyPwd.jsp</result>
+		</action>
+		<!-- 登陆 -->
+		<action name="login">
+			<result>/WEB-INF/context/user/login.jsp</result>
+		</action>
+		<!-- 查询 -->
+		<action name="search">
+			<result>/WEB-INF/context/user/search.jsp</result>
+		</action>
+		
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

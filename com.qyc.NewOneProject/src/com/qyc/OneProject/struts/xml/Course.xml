@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Course" extends="struts-default" namespace="/Course">
+		<action name="insert" class="com.qyc.OneProject.action.CourseAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/Course/Course.jsp</result>
+		</action>
+		<action name="update" class="com.qyc.OneProject.action.CourseAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/Course/Course.jsp</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.CourseAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/Course/Course.jsp</result>
+		</action>
+		<action name="CourseInfo" class="com.qyc.OneProject.action.CourseAction"
+			method="CourseInfo"></action>
+		<action name="Course">
+			<result name="success">/WEB-INF/content/Admin/Course/Course.jsp</result>
+		</action>
+		
+		<!-- 教师开课 -->
+		<action name="CourseTInfo" class="com.qyc.OneProject.action.CourseAction" method="CourseTInfo">
+			<result name="success">/WEB-INF/content/Teacher/TCourse.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

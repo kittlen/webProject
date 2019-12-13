@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" >
+<hibernate-configuration>
+<session-factory>
+	<property name="show_sql">true</property>
+	<property name="dialect">
+		org.hibernate.dialect.SQLServerDialect
+	</property>
+	<property name="myeclipse.connection.profile">
+		com.microsoft.sqlserver.jdbc.SQLServerDriver
+	</property>
+
+	<property name="jdbc.use_scrollable_resultset">false</property>
+	<property name="hbm2ddl.auto">update</property>
+	<mapping resource="com/qyc/newsProject/hibernate/xml/User.hbm.xml" />
+	<mapping resource="com/qyc/newsProject/hibernate/xml/Power.hbm.xml" />
+	<mapping
+		resource="com/qyc/newsProject/hibernate/xml/Notice.hbm.xml" />
+	<mapping resource="com/qyc/newsProject/hibernate/xml/NType.hbm.xml" />
+	<mapping
+		resource="com/qyc/newsProject/hibernate/xml/TopImg.hbm.xml" />
+	<mapping
+		resource="com/qyc/newsProject/hibernate/xml/Comment.hbm.xml" />
+
+
+
+</session-factory>
+</hibernate-configuration>

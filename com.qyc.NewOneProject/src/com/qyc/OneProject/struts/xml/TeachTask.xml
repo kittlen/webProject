@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="TeachTask" extends="struts-default" namespace="/TeachTask">
+		<action name="insert" class="com.qyc.OneProject.action.TeachTaskAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Teacher/TCourse.jsp
+			</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.TeachTaskAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Teacher/TCourse.jsp
+			</result>
+		</action>
+		
+		
+		
+		<!-- 开课查询 -->
+		<action name="TeachTaskInfo" class="com.qyc.OneProject.action.TeachTaskAction"
+			method="TeachTaskInfo">
+			<result name="success">/WEB-INF/content/Teacher/TCourse.jsp
+			</result>
+		</action>
+		<!-- 课表配置 -->
+		<action name="ArrangeSelect" class="com.qyc.OneProject.action.TeachTaskAction"
+			method="ArrangeSelect">
+		</action>
+		
+		
+		
+		<action name="TCourse">
+			<result>/WEB-INF/content/Teacher/TCourse.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

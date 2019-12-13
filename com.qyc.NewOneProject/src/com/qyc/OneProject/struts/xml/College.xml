@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="College" extends="struts-default" namespace="/College">
+		<action name="insert" class="com.qyc.OneProject.action.CollegeAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/College/College.jsp</result>
+		</action>
+		<action name="update" class="com.qyc.OneProject.action.CollegeAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/College/College.jsp</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.CollegeAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/College/College.jsp</result>
+		</action>
+		<action name="CollegeInfo" class="com.qyc.OneProject.action.CollegeAction"
+		method="CollegeInfo"></action>
+		<action name="College">
+			<result>/WEB-INF/content/Admin/College/College.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

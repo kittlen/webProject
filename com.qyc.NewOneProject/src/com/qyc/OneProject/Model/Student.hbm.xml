@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.OneProject.Model">
+	<class name="Student" table="T_Student">
+		<id name="Stu_ID" column="Stu_ID" type="string">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="Name" column="Name" type="string" length="50"></property>
+		<property name="Sex" column="Sex" type="string" length="50"></property>
+		<property name="Birth" column="Birth" type="string" length="50"></property>
+		<property name="Phone" column="Phone" type="string" length="50"></property>
+		<property name="Family" column="Family" type="string" length="50"></property>
+		<property name="Photo" column="Photo" type="string" length="50"></property>
+		<property name="Password" column="Password" type="string"
+			length="50"></property>
+		<property name="Remark" column="Remark" type="text"></property>
+		<many-to-one name="TClass" class="Class" lazy="false">
+			<column name="Class_ID"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

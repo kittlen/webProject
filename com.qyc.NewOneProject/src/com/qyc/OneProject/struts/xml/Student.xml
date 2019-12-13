@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Student" extends="struts-default" namespace="/Student">
+		<action name="insert" class="com.qyc.OneProject.action.StudentAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/Student/Student.jsp
+			</result>
+		</action>
+		<action name="update" class="com.qyc.OneProject.action.StudentAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/Student/Student.jsp
+			</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.StudentAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/Student/Student.jsp
+			</result>
+		</action>
+		<action name="reset" class="com.qyc.OneProject.action.StudentAction"
+			method="reset">
+			<result name="success">/WEB-INF/content/Admin/Student/Student.jsp
+			</result>
+		</action>
+		<action name="StudentInfo" class="com.qyc.OneProject.action.StudentAction"
+			method="StudentInfo"></action>
+		<action name="Student">
+			<result>/WEB-INF/content/Admin/Student/Student.jsp</result>
+		</action>
+
+		<!-- 个人信息修改 -->
+		<action name="updateIn" class="com.qyc.OneProject.action.StudentAction"
+			method="updateIn">
+			<result name="success">/WEB-INF/content/Student/StudentRevise.jsp
+			</result>
+		</action>
+		<!-- 照片修改 -->
+		<action name="execute" class="com.qyc.OneProject.action.StudentPhoto"
+			method="execute">
+			<result name="success">/WEB-INF/content/Student/StudentRevise.jsp
+			</result>
+		</action>
+		<!-- 密码修改 -->
+		<action name="updatePwd" class="com.qyc.OneProject.action.StudentAction"
+			method="updatePwd">
+			<result name="success">/WEB-INF/content/Student/StudentRevisePwd.jsp
+			</result>
+		</action>
+
+		<action name="Login" class="com.qyc.OneProject.action.StudentAction"
+			method="Login">
+			<result name="success">/WEB-INF/content/Student/StudentRevise.jsp
+			</result>
+			<result name="error">/WEB-INF/content/Student/login.jsp</result>
+		</action>
+		<action name="*">
+			<result>/WEB-INF/content/Student/{1}.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

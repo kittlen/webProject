@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Department" extends="struts-default" namespace="/Department">
+		<action name="insert" class="com.qyc.OneProject.action.DepartmentAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/Department/Department.jsp
+			</result>
+		</action>
+		<action name="update" class="com.qyc.OneProject.action.DepartmentAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/Department/Department.jsp
+			</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.DepartmentAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/Department/Department.jsp
+			</result>
+		</action>
+		<action name="DepartmentInfo" class="com.qyc.OneProject.action.DepartmentAction"
+			method="DepartmentInfo"></action>
+		<action name="Department">
+			<result>/WEB-INF/content/Admin/Department/Department.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

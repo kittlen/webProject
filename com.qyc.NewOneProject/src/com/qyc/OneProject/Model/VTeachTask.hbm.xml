@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.OneProject.Model">
+	<class name="VTeachTask" table="V_teachTask">
+		<id name="ID" type="integer" column="ID"></id>
+		<property name="Course" column="Course" type="string"></property>
+		<property name="ProfessionName" column="ProfessionName" type="string"></property>
+		<property name="StudyTime" column="StudyTime" type="integer"></property>
+		<property name="Crediy" column="Crediy" type="double"></property>
+		<property name="CurriculumTime" column="CurriculumTime" type="string"></property>
+		<property name="Name" column="Name" type="string"></property>
+		<property name="Curricula" column="Curricula" type="string"></property>
+		<property name="Auditing" column="Auditing" type="string"></property>
+		<property name="TeacherID" column="TeacherID" type="string"></property>
+		<property name="ProfessionID" column="ProfessionID" type="string"></property>
+		<property name="CourseID" column="CourseID" type="string"></property>
+
+		<property name="Remark" column="Remark" type="text"></property>
+
+	</class>
+</hibernate-mapping>

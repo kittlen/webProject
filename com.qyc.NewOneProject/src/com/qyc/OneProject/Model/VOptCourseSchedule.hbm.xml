@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.OneProject.Model">
+	<class name="VOptCourseSchedule" table="V_OptCourseSchedule">
+		<id name="CourseScheduleID" type="integer" column="CourseScheduleID"></id>
+		<property name="Course" column="Course" type="string"></property>
+		<property name="StudentName" column="StudentName" type="string"></property>
+		<property name="YearName" column="YearName" type="string"></property>
+		<property name="GradeName" column="GradeName" type="string"></property>
+		<property name="TeacherName" column="TeacherName" type="string"></property>
+		<property name="ClassRoomCategory" column="ClassRoomCategory"
+			type="string"></property>
+		<property name="ClassRoomName" column="ClassRoomName" type="string"></property>
+		<property name="ProfessionName" column="ProfessionName" type="string"></property>
+		<property name="Classfestival" column="Classfestival" type="string"></property>
+		<property name="ClassTime" column="ClassTime" type="string"></property>
+		<property name="StudyTime" column="StudyTime" type="integer"></property>
+		<property name="Crediy" column="Crediy" type="double"></property>
+		<property name="CurriculumTime" column="CurriculumTime" type="string"></property>
+		<property name="Curricula" column="Curricula" type="string"></property>
+		<property name="Stu_ID" column="Stu_ID" type="string"></property>
+		<property name="ScoreOne" column="ScoreOne" type="string"></property>
+		<property name="ScoreTwo" column="ScoreTwo" type="string"></property>
+		<property name="ScoreThree" column="ScoreThree" type="string"></property>
+		<property name="TotalScore" column="TotalScore" type="string"></property>
+		<property name="Class_ID" column="Class_ID" type="string"></property>
+		<property name="TeacherID" column="TeacherID" type="string"></property>
+		<property name="TeachTaskID" column="TeachTaskID" type="integer"></property>
+		<property name="ClassRoomID" column="ClassRoomID" type="string"></property>
+		<property name="ScheduleID" column="ScheduleID" type="integer"></property>
+		<property name="ProfessionID" column="ProfessionID" type="string"></property>
+		<property name="CourseID" column="CourseID" type="string"></property>
+		<property name="Remark" column="Remark" type="text"></property>
+	</class>
+</hibernate-mapping>

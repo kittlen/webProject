@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="CourseSchedule" extends="struts-default"
+		namespace="/CourseSchedule">
+		<!-- 已经配置完成的课程 -->
+		<action name="Tselect" class="com.qyc.OneProject.action.CourseScheduleAction"
+			method="Tselect">
+		</action>
+		<!-- 学生选课 -->
+		<action name="CourseScheduleInfo" class="com.qyc.OneProject.action.CourseScheduleAction"
+			method="CourseScheduleInfo">
+		</action>
+		<!-- 学生选课添加 -->
+		<action name="insert" class="com.qyc.OneProject.action.CourseScheduleAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Student/CourseSchedule.jsp
+			</result>
+		</action>
+
+		<!-- 教师课程表 -->
+		<action name="TTselect" class="com.qyc.OneProject.action.CourseScheduleAction"
+			method="TTselect"></action>
+
+		<!-- 学生成绩修改-->
+		<action name="update" class="com.qyc.OneProject.action.CourseScheduleAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Teacher/Success.jsp
+			</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

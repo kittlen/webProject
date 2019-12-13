@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="iUserService" class="com.qyc.newsProject.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+		<property name="power" ref="power"></property>
+	</bean>
+
+	<bean id="power" class="com.qyc.newsProject.model.Power"></bean>
+
+	<bean id="iNoticeService" class="com.qyc.newsProject.service.impl.NoticeServiceImpl">
+		<property name="noticeDao" ref="noticeDao"></property>
+	</bean>
+
+	<bean id="iNTypeService" class="com.qyc.newsProject.service.impl.NTypeServiceImpl">
+		<property name="nTypeDao" ref="nTypeDao"></property>
+	</bean>
+	
+	<bean id="iTopImgService" class="com.qyc.newsProject.service.impl.TopImgServiceImpl">
+		<property name="topImgDao" ref="topImgDao"></property>
+	</bean>
+	<bean id="topImg" class="com.qyc.newsProject.model.TopImg"></bean>
+	
+	<bean id="iCommentsService" class="com.qyc.newsProject.service.impl.CommentsServiceImpl">
+		<property name="commentsDao" ref="commentsDao"></property>
+	</bean>
+	
+
+
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Audit" extends="struts-default" namespace="/Audit">
+		<action name="update" class="com.qyc.OneProject.action.AuditAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/Audit/Audit.jsp</result>
+		</action>
+
+		<!-- 管理员审核 -->
+		<action name="AuditInfo" class="com.qyc.OneProject.action.AuditAction"
+			method="AuditInfo">
+			<result name="success">/WEB-INF/content/Admin/Audit/Audit.jsp</result>
+		</action>
+
+		<action name="Audit">
+			<result name="success">/WEB-INF/content/Admin/Audit/Audit.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

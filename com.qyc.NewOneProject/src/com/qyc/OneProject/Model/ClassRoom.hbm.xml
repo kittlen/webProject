@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.OneProject.Model">
+	<class name="ClassRoom" table="T_ClassRoom">
+		<id name="ID" column="ID" type="string">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="ClassRoomName" column="ClassRoomName" type="string"
+			length="50"></property>
+		<property name="ClassRoomCategory" column="ClassRoomCategory"
+			type="string" length="50"></property>
+		<property name="Remark" column="Remark" type="text"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Teacher" extends="struts-default" namespace="/Teacher">
+		<action name="insert" class="com.qyc.OneProject.action.TeacherAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/Teacher/Teacher.jsp
+			</result>
+		</action>
+		<action name="update" class="com.qyc.OneProject.action.TeacherAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/Teacher/Teacher.jsp
+			</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.TeacherAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/Teacher/Teacher.jsp
+			</result>
+		</action>
+		<action name="reset" class="com.qyc.OneProject.action.TeacherAction"
+			method="reset">
+			<result name="success">/WEB-INF/content/Admin/Teacher/Teacher.jsp
+			</result>
+		</action>
+		<action name="TeacherInfo" class="com.qyc.OneProject.action.TeacherAction"
+			method="teacherInfo"></action>
+		<action name="Teacher">
+			<result name="success">/WEB-INF/content/Admin/Teacher/Teacher.jsp
+			</result>
+		</action>
+		
+		
+		
+		<action name="Login" class="com.qyc.OneProject.action.TeacherAction"
+			method="Login">
+			<result name="success">/WEB-INF/content/Teacher/TeacherRevise.jsp</result>
+			<result name="error">/WEB-INF/content/Teacher/login.jsp</result>
+		</action>
+		<!-- 个人信息修改 -->
+		<action name="updateIn" class="com.qyc.OneProject.action.TeacherAction"
+			method="updateIn">
+			<result name="success">/WEB-INF/content/Teacher/TeacherRevise.jsp
+			</result>
+		</action>
+		<!-- 照片修改 -->
+		<action name="execute" class="com.qyc.OneProject.action.TeacherPhoto"
+			method="execute">
+			<result name="success">/WEB-INF/content/Teacher/TeacherRevise.jsp
+			</result>
+		</action>
+		<!-- 密码修改 -->
+		<action name="updatePwd" class="com.qyc.OneProject.action.TeacherAction"
+			method="updatePwd">
+			<result name="success">/WEB-INF/content/Teacher/TeacherRevisePwd.jsp
+			</result>
+		</action>
+		
+		
+		<action name="*">
+			<result name="success">/WEB-INF/content/Teacher/{1}.jsp</result>
+		</action>
+		
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

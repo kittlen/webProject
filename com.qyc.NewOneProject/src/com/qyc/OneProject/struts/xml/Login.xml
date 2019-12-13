@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Login" extends="struts-default" namespace="/AllLogin">
+		<action name="Alogin">
+		<result>/WEB-INF/content/Admin/login.jsp</result>
+		</action>
+		<action name="Slogin">
+		<result>/WEB-INF/content/Student/login.jsp</result>
+		</action>
+		<action name="Tlogin">
+		<result>/WEB-INF/content/Teacher/login.jsp</result>
+		</action>
+		<action name="login">
+		<result>/WEB-INF/content/login.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

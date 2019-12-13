@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Admin" extends="struts-default" namespace="/Admin">
+		<action name="Login" class="com.qyc.OneProject.action.AdminAction"
+			method="Login">
+			<result name="success">/WEB-INF/content/Admin/College/College.jsp
+			</result>
+			<result name="error">/WEB-INF/content/Admin/login.jsp</result>
+		</action>
+		<action name="insert" class="com.qyc.OneProject.action.AdminAction"
+			method="insert">
+			<result name="success">/WEB-INF/content/Admin/Admin/Admin.jsp</result>
+		</action>
+		<action name="delete" class="com.qyc.OneProject.action.AdminAction"
+			method="delete">
+			<result name="success">/WEB-INF/content/Admin/Admin/Admin.jsp</result>
+		</action>
+		<action name="update" class="com.qyc.OneProject.action.AdminAction"
+			method="update">
+			<result name="success">/WEB-INF/content/Admin/Admin/Admin.jsp</result>
+		</action>
+		<!-- 重置密码 -->
+		<action name="reset" class="com.qyc.OneProject.action.AdminAction"
+			method="reset">
+			<result name="success">/WEB-INF/content/Admin/Admin/Admin.jsp</result>
+		</action>
+		<!-- 信息修改 -->
+		<action name="updateIn" class="com.qyc.OneProject.action.AdminAction"
+			method="updateIn">
+			<result name="success">/WEB-INF/content/Admin/Admin/AdminRevise.jsp</result>
+		</action>
+		<!-- 照片修改 -->
+		<action name="Photo" class="com.qyc.OneProject.action.AdminPhoto"
+			method="execute">
+			<result name="success">/WEB-INF/content/Admin/Admin/AdminRevise.jsp</result>
+		</action>
+		<!-- 密码修改 -->
+		<action name="updatePwd" class="com.qyc.OneProject.action.AdminAction"
+			method="updatePwd">
+			<result name="success">/WEB-INF/content/Admin/Admin/AdminRevisePwd.jsp</result>
+		</action>
+		
+		<!-- 管理员列表 -->
+		<action name="AdminInfo" class="com.qyc.OneProject.action.AdminAction"
+			method="AdminInfo">
+		</action>
+
+		<action name="AdminRelease">
+			<result>/WEB-INF/content/Admin/Admin/AdminRelease.jsp</result>
+		</action>
+		<action name="AdminReleaseInfo">
+			<result>/WEB-INF/content/Admin/Admin/AdminReleaseInfo.jsp</result>
+		</action>
+		<action name="Admin">
+			<result>/WEB-INF/content/Admin/Admin/Admin.jsp</result>
+		</action>
+		<action name="AdminRevise">
+			<result>/WEB-INF/content/Admin/Admin/AdminRevise.jsp</result>
+		</action>
+		<action name="AdminRevisePwd">
+			<result>/WEB-INF/content/Admin/Admin/AdminRevisePwd.jsp</result>
+		</action>
+		<action name="*">
+			<result>/WEB-INF/content/Admin/{1}.jsp</result>
+		</action>
+
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

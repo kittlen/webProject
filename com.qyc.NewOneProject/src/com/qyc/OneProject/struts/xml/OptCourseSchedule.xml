@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="OptCourseSchedule" extends="struts-default"
+		namespace="/OptCourseSchedule">
+
+		<action name="delete"
+			class="com.qyc.OneProject.action.OptCourseScheduleAction" method="delete">
+			<result name="success">/WEB-INF/content/Student/OptCourseSchedule.jsp
+			</result>
+		</action>
+		<!-- 获取本学期学生所选课内容 -->
+		<action name="OptCourseScheduleInfo"
+			class="com.qyc.OneProject.action.OptCourseScheduleAction" method="OptCourseScheduleInfo"></action>
+		<!-- 学生课程表 -->
+		<action name="TSselect"
+			class="com.qyc.OneProject.action.OptCourseScheduleAction" method="TSselect"></action>	
+		<!-- 教师成绩录入 -->
+		<action name="Tselect"
+			class="com.qyc.OneProject.action.OptCourseScheduleAction" method="Tselect"></action>	
+		
+		
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
