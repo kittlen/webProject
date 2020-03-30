@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" >
+<hibernate-configuration>
+<session-factory>
+	<property name="show_sql">true</property>
+	<property name="dialect">
+		org.hibernate.dialect.SQLServerDialect
+	</property>
+	<property name="myeclipse.connection.profile">
+		com.microsoft.sqlserver.jdbc.SQLServerDriver
+	</property>
+	<property name="connection.url">
+		jdbc:sqlserver://localhost:1433;DatabaseName=db_CourseSelectionSystem
+	</property>
+	<property name="connection.username">sa</property>
+	<property name="connection.password">123456</property>
+	<property name="connection.driver_class">
+		com.microsoft.sqlserver.jdbc.SQLServerDriver
+	</property>
+	<property name="jdbc.use_scrollable_resultset">false</property>
+
+	<mapping resource="com/qyc/OneProject/Model/Admin.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/College.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Department.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Profession.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Class.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Student.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Teacher.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Course.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/ClassRoom.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/TeachTask.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/VTeachTask.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Audit.hbm.xml" />
+	<mapping
+		resource="com/qyc/OneProject/Model/VCourseSchedule.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Schedule.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/CourseSchedule.hbm.xml" />
+	<mapping
+		resource="com/qyc/OneProject/Model/VOptCourseSchedule.hbm.xml" />
+	<mapping resource="com/qyc/OneProject/Model/Notice.hbm.xml" />
+
+</session-factory>
+</hibernate-configuration>

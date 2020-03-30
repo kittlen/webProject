@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="admin" extends="index" namespace="/adm">
+		<!-- 新闻类型 列表-->
+		<action name="nTypeInfo" class="com.qyc.newsProject.action.NTypeAction"
+			method="nTypeInfo">
+		</action>
+		<!-- 轮播添加 -->
+		<action name="topImgsave" class="com.qyc.newsProject.action.TopImgAction"
+			method="execute">
+			<result>/WEB-INF/context/admin/topImg.jsp</result>
+		</action>
+		<!-- 轮播显示 -->
+		<action name="topImgInfo" class="com.qyc.newsProject.action.TopImgAction"
+			method="topImgInfo">
+		</action>
+		<!-- 轮播添加页跳转 -->
+		<action name="topImg">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/admin/topImg.jsp</result>
+		</action>
+		<!-- 审核 -->
+		<action name="auditInfo" class="com.qyc.newsProject.action.NoticeAction"
+			method="auditInfo">
+		</action>
+		
+		<!-- 审核结果 -->
+		<action name="auditup" class="com.qyc.newsProject.action.NoticeAction"
+			method="auditup">
+			<result name="success">/WEB-INF/context/admin/audit.jsp</result>
+		</action>
+		
+		<action name="audit">
+			<interceptor-ref name="landStack"></interceptor-ref>
+			<result>/WEB-INF/context/admin/audit.jsp</result>
+		</action>
+
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

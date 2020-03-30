@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="index" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="landStack">
+				<interceptor-ref name="landInt"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor name="landInt"
+				class="com.qyc.newsProject.action.LandInterceptors"></interceptor>
+		</interceptors>
+		<global-results>
+			<result name="Land">/WEB-INF/context/user/login.jsp</result>
+			<result name="index">/WEB-INF/context/index.jsp</result>
+		</global-results>
+
+		<action name="index">
+			<result>/WEB-INF/context/index.jsp</result>
+		</action>
+
+	</package>
+
+	<include file="com/qyc/newsProject/struts/xml/User.xml"></include>
+	<include file="com/qyc/newsProject/struts/xml/Notice.xml"></include>
+	<include file="com/qyc/newsProject/struts/xml/Admin.xml"></include>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

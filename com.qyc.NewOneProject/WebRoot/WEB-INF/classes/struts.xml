@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="false" />
+	
+	<include file="com/qyc/OneProject/struts/xml/Login.xml"></include>
+
+	<!-- 管理员端 -->
+	<include file="com/qyc/OneProject/struts/xml/Admin.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/College.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Department.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Profession.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Class.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Student.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Teacher.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Course.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/ClassRoom.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Audit.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Notice.xml"></include>
+	
+	
+	
+	<!-- 教师端 -->
+	<include file="com/qyc/OneProject/struts/xml/TeachTask.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/CourseSchedule.xml"></include>
+	<include file="com/qyc/OneProject/struts/xml/Schedule.xml"></include>
+	
+	<!-- 学生端 -->
+	<include file="com/qyc/OneProject/struts/xml/OptCourseSchedule.xml"></include>
+
+	<!-- 退出 -->
+	<include file="com/qyc/OneProject/struts/xml/Exit.xml"></include>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

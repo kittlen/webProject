@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.newsProject.model">
+	<class name="Comment" table="T_Comment">
+		<id name="cID" column="cID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="context" column="context" type="text"></property>
+		<many-to-one name="user" class="User" lazy="false">
+			<column name="uID"></column>
+		</many-to-one>
+		<many-to-one name="notice" class="Notice" lazy="false">
+			<column name="nID"></column>
+		</many-to-one>
+		<property name="time" column="time" type="string" length="50"></property>
+		<property name="heat" column="heat" type="integer"></property>
+		
+	</class>
+</hibernate-mapping>

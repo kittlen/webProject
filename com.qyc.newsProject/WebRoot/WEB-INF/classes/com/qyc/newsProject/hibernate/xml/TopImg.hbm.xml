@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.newsProject.model">
+	<class name="TopImg" table="T_TopImg">
+		<id name="tIID" column="tIID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="photo" column="photo" type="string"></property>
+		<property name="remark" column="remark" type="text"></property>
+		<property name="time" column="time" type="string" length="100"></property>
+	</class>
+</hibernate-mapping>

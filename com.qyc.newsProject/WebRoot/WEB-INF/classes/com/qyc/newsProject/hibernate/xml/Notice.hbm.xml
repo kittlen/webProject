@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.qyc.newsProject.model">
+	<class name="Notice" table="T_Notice">
+		<id name="nID" column="nID" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="noticeTitle" column="noticeTitle" type="text"></property>
+		<property name="noticeContent" column="noticeContent" type="text"></property>
+		<property name="noticeBrief" column="noticeBrief" type="text"></property>
+		<property name="noticephoto1" column="noticephoto1" type="text"></property>
+		<property name="noticephoto2" column="noticephoto2" type="text"></property>
+		<property name="noticephoto3" column="noticephoto3" type="text"></property>
+		<property name="releaseTime" column="releaseTime" type="string" length="50"></property>
+		<property name="audit" column="audit" type="string" length="50"></property>
+		<property name="heat" column="heat" type="integer"></property>
+		<many-to-one name="user" class="User" lazy="false">
+			<column name="uID"></column>
+		</many-to-one>
+		<many-to-one name="nType" class="NType" lazy="false">
+			<column name="nTID"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
