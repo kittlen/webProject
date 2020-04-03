@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="user" extends="default" namespace="/us">
+	<global-allowed-methods>useradd,userde</global-allowed-methods>
+		<action name="add" class="edu.qyc.StrutsMVC.controller.UserMgr" method="add">
+			<result name="useradd">/WEB-INF/content/user.jsp</result>
+		</action>
+		<action name="add2" class="edu.qyc.StrutsMVC.controller.UserMgr2" method="add">
+			<result name="useradd">/WEB-INF/content/user.jsp</result>
+		</action>		
+		<action name="add3" class="edu.qyc.StrutsMVC.controller.UserMgr2">
+			<result name="useradd">/WEB-INF/content/user.jsp</result>
+			<result name="userde">/WEB-INF/content/login.jsp</result>
+		</action>
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

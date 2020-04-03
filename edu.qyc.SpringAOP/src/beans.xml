@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="a" class="edu.qyc.SpringAOP.user.userA">
+	</bean>
+	<bean id="b" class="edu.qyc.SpringAOP.user.userB">
+	</bean>
+	<bean id="c" class="edu.qyc.SpringAOP.user.userC">
+	</bean>
+	<bean id="User" class="edu.qyc.SpringAOP.user.User">
+	</bean>
+
+	<!-- 配置切面 -->
+	<aop:config>
+		<!-- 前切入 aop:before -->
+		<aop:aspect ref="User">
+			<aop:pointcut expression="execution(* edu.qyc.SpringAOP.user.*.*(..))"
+				id="before" />
+			<aop:before method="print" pointcut-ref="before" />
+		</aop:aspect>
+		<!-- 后切入 aop:after -->
+		<aop:aspect ref="User">
+			<aop:pointcut expression="execution(* edu.qyc.SpringAOP.user.*.*(..))"
+				id="before" />
+			<aop:after method="print2" pointcut-ref="before" />
+		</aop:aspect>
+		<!-- 环绕切入 aop:around -->
+		<aop:aspect ref="User">
+			<aop:pointcut expression="execution(* edu.qyc.SpringAOP.user.*.*(..))"
+				id="before" />
+			<aop:around method="print3" pointcut-ref="before" />
+		</aop:aspect>
+
+
+	</aop:config>
+
+
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="false" />
+	<constant value="language" name="struts.custom.i18n.resources"/>
+	 <constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="default" extends="struts-default">
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+
+	<package name="Login" extends="default">
+		<action name="add" class="edu.qyc.StrutsMVC.controller.StudentAction"
+			method="add">
+			<result name="success">/WEB-INF/content/MyJsp.jsp</result>
+		</action>
+		<action name="select" class="edu.qyc.StrutsMVC.controller.StudentAction"
+			method="select"></action>
+
+	</package>
+	<package name="select" extends="json-default">
+		<action name="select2" class="edu.qyc.StrutsMVC.controller.StudentAction"
+			method="select2">
+			<result name="StudentJson" type="json"></result>
+		</action>
+	</package>
+	<include file="edu/qyc/StrutsMVC/xml/user.xml"></include>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

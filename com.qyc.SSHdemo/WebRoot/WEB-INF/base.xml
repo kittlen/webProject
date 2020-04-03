@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- *********************************************hibernate数据源配置***************************************************** -->
+	<!-- 读取properties文件 -->
+	<context:property-placeholder location="classpath:db.properties" />
+
+	<!-- 将hibernate数据源交给c3p0处理 -->
+	<bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">
+		<property name="driverClass" value="${driver}"></property><!-- 驱动程序 -->
+		<property name="jdbcUrl" value="${url}"></property><!-- 数据库连接 -->
+		<property name="user" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+		<property name="maxPoolSize" value="${maxsize}"></property><!-- 最大连接数 -->
+		<property name="minPoolSize" value="${minsize}"></property><!-- 最小连接数 -->
+		<property name="initialPoolSize" value="${initsize}"></property><!-- 初始化连接数 -->
+	</bean>
+	<!-- ******************************************************end******************************************************************** -->
+
+
+	<!-- *********************************************hibernate SessionFacoty配置***************************************************** -->
+	<!-- 配置SessionFactory 对应版本与hibernate版本一致 -->
+	<bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		id="sessionFactory">
+		<property name="dataSource" ref="dataSource"></property><!-- c3p0连接本地 -->
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property><!-- 加载默认文件 -->
+	</bean>
+	<!-- ******************************************************end******************************************************************** -->
+
+
+	<!-- *************************************************Spring事务配置 ****************************************************************** -->
+	<!-- 引入TX aop -->
+	<bean class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		id="transactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 配置事务管理者 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" timeout="8" /><!-- 与事务属性关联的方法名 
+				事务是否只读 超时时间 -->
+			<tx:method name="*" timeout="5" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 配置AOP -->
+	<aop:config>
+		<!-- 在com.qyc.SSHdemo.service.impl下所有类 对象 参数 返回值中 切面插入事务 -->
+		<aop:pointcut expression="execution(* com.qyc.SSHdemo.service.impl.*.*(..))"
+			id="mycut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="mycut" />
+	</aop:config>
+	<!-- ******************************************************end******************************************************************** -->
+
+
+</beans>
